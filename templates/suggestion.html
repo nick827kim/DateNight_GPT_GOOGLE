@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+  <title>Restaurant Suggestions</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Restaurant Suggestions</h1>
+  <ul>
+    {% for restaurant in restaurants %}
+      <li>
+        <h2>{{ restaurant.name }}</h2>
+        <p>Address: {{ restaurant.address }}</p>
+        <p>Rating: {{ restaurant.rating }}</p>
+        <img src="{{ restaurant.map_image }}" alt="{{ restaurant.name }} map">
+      </li>
+    {% endfor %}
+  </ul>
+  <a href="{{ url_for('index') }}">Try again</a>
+</body>
+</html>

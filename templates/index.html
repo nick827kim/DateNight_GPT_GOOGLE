@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+  <title>Date-Night Restaurant Suggestion App</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>Welcome to the Date-Night Restaurant Suggestion App!</h1>
+  <form action="/suggest" method="post">
+    <label for="person1">What are you in the mood for?</label>
+    <input type="text" name="person1" required><br>
+    <label for="person2">What is your date in the mood for?</label>
+    <input type="text" name="person2" required><br>
+    <label for="location">Location (city, neighborhood, etc.):</label>
+    <input type="text" name="location" required><br>
+    <label for="price">What is the most you are willing to spend tonight?</label>
+    <input type="number" name="price" min="0" step="0.01" required><br>
+    <label for="age">Age group (teens, twenties, thirties, etc.):</label>
+    <select name="age" required>
+      <option value="" disabled selected>How old are you?</option>
+      <option value="teens"> Teens</option>
+      <option value="twenties"> Twenties</option>
+      <option value="thirties"> Thirties</option>
+      <option value="fourties"> Fourties</option>
+      <option value="fifties"> Fifties</option>
+      <option value="sixties"> Sixties</option>
+    </select><br>
+    <input type="submit" value="Get suggestion">
+  </form>
+</body>
+</html>
